@@ -1,0 +1,153 @@
+.price {
+   margin-bottom: 105px;
+
+   &__container {}
+
+   &__title {
+      margin-bottom: 33px;
+
+      @media (min-width:780px) {
+         margin-bottom: 40px;
+      }
+
+      @media (min-width:1120px) {
+         margin-bottom: 78px;
+      }
+
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @media (min-width:780px) {
+         flex-direction: row;
+         gap: 25px;
+      }
+   }
+
+   &__number {
+      font-weight: 900;
+      font-size: 40px;
+      text-transform: uppercase;
+      color: var(--color-yellow);
+      white-space: nowrap;
+
+      @media (min-width:780px) {
+         font-size: 50px;
+      }
+
+   }
+
+   &__description {}
+
+   &__description-item {
+      margin-bottom: 33px;
+      position: relative;
+      padding-left: 15px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 137%;
+
+      @media (min-width:780px) {
+         margin-bottom: 38px;
+         font-size: 14px;
+      }
+
+      @media (min-width:1120px) {
+         font-size: 16px;
+      }
+
+      &::before {
+         content: '–';
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+   }
+
+   &__list {
+      border-radius: 4px;
+      padding: 14px 10px;
+      background-color: var(--color-gainsborough);
+
+      @media (min-width:780px) {
+         padding: 24px 31px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 73px;
+      }
+
+      li {
+         padding-top: 9px;
+         padding-bottom: 9px;
+         padding-left: 10px;
+         margin-left: 16px;
+         list-style-type: "—";
+         font-weight: 500;
+         font-size: 13px;
+
+         @media (min-width:780px) {
+            font-size: 14px;
+         }
+
+         @media (min-width:1120px) {
+            font-size: 16px;
+         }
+
+         &:not(:last-child) {
+            p {
+               margin-bottom: 20px;
+            }
+         }
+      }
+
+      p {
+         @media (min-width:780px) {
+            padding: 20px 0;
+         }
+
+         @media (min-width:1120px) {
+
+            margin-left: -26px;
+         }
+      }
+
+      b {
+         font-weight: 700;
+      }
+   }
+
+   &__list-title {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 212%;
+      text-align: center;
+
+      @media (min-width:780px) {
+         font-size: 14px;
+         text-align: start;
+      }
+
+      @media (min-width:1120px) {
+
+         font-size: 16px;
+      }
+
+      &::after {
+         content: '';
+         margin-left: 10px;
+         display: inline-block;
+         width: 0;
+         height: 0;
+         border-left: 5px solid transparent;
+         border-right: 5px solid transparent;
+         border-top: 9px solid var(--color-black);
+      }
+   }
+
+
+
+}

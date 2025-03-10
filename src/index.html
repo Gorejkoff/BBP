@@ -10,13 +10,13 @@
 
    <div class="wrapper">
 
-      @@include('html/2_header.html',{})
+      <!-- @@include('html/2_header.html',{}) -->
 
       <div class="main">
 
-         @@include('html/First-Screen/First-Screen.html',{})
+         <!-- @@include('html/First-Screen/First-Screen.html',{}) -->
 
-         @@include('html/Submit-Application/Submit-Application.html',{})
+         @@include('html/Submit-Application/Submit-Application.html',{"title": "Забыть о рутине", "text": true})
 
          @@include('html/About/About.html',{})
 
@@ -26,13 +26,15 @@
 
          @@include('html/Advantage/Advantage.html',{})
 
+         @@include('html/Price/Price.html',{})
 
+         <!-- @@include('html/Submit-Application/Submit-Application.html',{"title": "Не стоит ждать"}) -->
 
-
+         <!-- @@include('html/Contacts/Contacts.html',{}) -->
 
       </div>
 
-      @@include('html/4_footer.html',{})
+      <!-- @@include('html/4_footer.html',{}) -->
 
    </div>
 

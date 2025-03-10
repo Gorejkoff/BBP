@@ -1,0 +1,41 @@
+.advantage {
+   padding-top: 72px;
+   padding-bottom: 93px;
+   margin-bottom: 67px;
+
+   &__container {}
+
+   &__title {
+      margin-bottom: 33px;
+   }
+
+   &__list {
+      margin-bottom: 35px;
+
+      @media (min-width:1120px) {
+         columns: 2;
+      }
+   }
+
+   &__item {
+      margin-bottom: 15px;
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 137%;
+      max-width: 550px;
+
+      @media (min-width:780px) {
+         margin-bottom: 20px;
+         font-size: 16px;
+      }
+   }
+
+   &__button {
+      @media (max-width:1119.98px) {
+         width: 100%;
+      }
+   }
+}

@@ -1,3 +1,5 @@
+@use '../assets/mixin.scss' as *;
+
 .about {
    padding-top: 38px;
    padding-bottom: 67px;
@@ -8,24 +10,48 @@
    &__title {}
 
    &__text {
-      margin-bottom: 54px;
+      margin-bottom: 59px;
       max-width: 830px;
+
+      @media (min-width:780px) {
+         margin-bottom: 78px;
+      }
    }
 
    &__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 62px;
+      grid-template-columns: 1fr;
+      gap: 54px;
+
+      @media (min-width:780px) {
+         grid-template-columns: 1fr 1fr;
+         column-gap: 29px;
+         row-gap: 65px;
+      }
+
+      @media (min-width:1120px) {
+         gap: 62px;
+      }
    }
 
    &__cell {
       display: flex;
       align-items: center;
-      gap: 33px;
+      gap: 20px;
+
+      @media (min-width:1120px) {
+         gap: 33px;
+      }
    }
 
    &__image {
-      flex: 0 0 177px;
+      flex: 0 0 100px;
+      @include size_adaptive_flex (0, 0, 100, 120, 375, 780);
+      @include size_adaptive_flex (0, 0, 120, 177, 780, 1120);
+
+      @media (min-width:1120px) {
+         flex: 0 0 177px;
+      }
    }
 
    &__image-shell {
@@ -47,13 +73,29 @@
    }
 
    &__data {
-      font-size: 16px;
+      font-size: 12px;
+
+      @media (min-width:780px) {
+         font-size: 14px;
+      }
+
+      @media (min-width:1120px) {
+         font-size: 16px;
+      }
    }
 
    &__name {
       font-weight: 700;
-      font-size: 28px;
+      font-size: 16px;
       line-height: 107%;
+
+      @media (min-width:780px) {
+         font-size: 20px;
+      }
+
+      @media (min-width:1120px) {
+         font-size: 28px;
+      }
    }
 
    &__position {
@@ -64,6 +106,11 @@
    &__expert {
       font-weight: 400;
       line-height: 137%;
+      font-size: 12px;
+
+      @media (min-width:1120px) {
+         font-size: 16px;
+      }
    }
 
    &__experience {

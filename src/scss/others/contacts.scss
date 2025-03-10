@@ -1,0 +1,45 @@
+.contacts {
+
+   margin-bottom: 65px;
+
+   &__container {}
+
+   &__title {}
+
+   &__body {
+      display: flex;
+      gap: 40px;
+   }
+
+   &__info {
+      flex: 0 0 360px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 137%
+   }
+
+   &__address {
+      margin-bottom: 25px;
+   }
+
+   &__weekday {
+      text-transform: uppercase;
+   }
+
+   &__social {
+      margin-top: 25px;
+      display: flex;
+      gap: 21px;
+      flex-wrap: wrap;
+   }
+
+   &__map {
+      min-height: 258px;
+      flex: 1 1 auto;
+
+      iframe {
+         width: 100%;
+         height: 100%;
+      }
+   }
+}

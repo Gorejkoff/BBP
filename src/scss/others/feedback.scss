@@ -1,3 +1,5 @@
+@use '../assets/mixin.scss' as *;
+
 .feedback {
    margin-bottom: 97px;
 
@@ -9,15 +11,35 @@
 
    &__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 75px;
-      row-gap: 45px;
+      grid-template-columns: 1fr;
+      gap: 40px;
+
+      @media (min-width:780px) {
+         grid-template-columns: 1fr 1fr;
+         column-gap: 54px;
+         row-gap: 42px;
+      }
+
+      @media (min-width:1120px) {
+         column-gap: 75px;
+         row-gap: 45px;
+      }
    }
 
    &__cell {
-      --size: 141px;
+      --size: 100px;
       display: flex;
       align-items: center;
+
+      // @include size_adaptive (--size, 100, 120, 375, 780);
+      // @include size_adaptive (--size, 120, 141, 780, 1120);
+      @media (min-width:780px) {
+         --size: 120px;
+      }
+
+      @media (min-width:1120px) {
+         --size: 141px;
+      }
    }
 
    &__image {
@@ -44,29 +66,53 @@
 
    &__block {
       margin-left: calc(var(--size) / 2 * -1);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
       padding-left: calc(15px + var(--size) / 2);
       background-color: var(--color-yellow);
+
+      @media (min-width:780px) {
+         margin-left: calc(var(--size) / 2 * -1);
+         padding-top: 15px;
+         padding-bottom: 15px;
+         padding-right: 30px;
+         padding-left: calc(15px + var(--size) / 2);
+      }
    }
 
    &__name {
-      margin-bottom: 11px;
+      margin-bottom: 4px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 100%;
+
+      @media (min-width:780px) {
+         font-size: 14px;
+      }
+
+      @media (min-width:1120px) {
+         margin-bottom: 11px;
+      }
+
+
    }
 
    &__text {
       font-weight: 500;
       font-size: 11px;
       line-height: 127%;
-
       -webkit-line-clamp: 3;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       overflow: hidden;
 
+      @media (min-width:780px) {
+         -webkit-line-clamp: 5;
+      }
+
+      @media (min-width:1120px) {
+         -webkit-line-clamp: 3;
+      }
    }
 }

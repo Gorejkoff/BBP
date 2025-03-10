@@ -3,24 +3,38 @@
 
    &__container {}
 
-   &__title {}
-
    &__text {
       margin-bottom: 30px;
       max-width: 513px;
    }
 
    &__form {
-      margin-bottom: 58px;
+      margin-bottom: 26px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 52px;
+      grid-template-columns: 1fr;
+      gap: 14px;
+
+      @media (min-width:780px) {
+         margin-bottom: 33px;
+         gap: 34px;
+      }
+
+      @media (min-width:1120px) {
+         margin-bottom: 58px;
+         grid-template-columns: 1fr 1fr;
+         gap: 52px;
+
+      }
    }
 
    &__form-block {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
+
+      @media (min-width:1120px) {
+         gap: 20px;
+      }
    }
 
    &__form-button {

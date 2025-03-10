@@ -52,18 +52,8 @@
    }
 
    &__button {
-      padding: 11px 16px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      min-height: 62px;
-      border: 2px solid #faba22;
-      border-radius: 4px;
-      background-color: var(--color-white);
+      --border-color: var(--color-yellow);
+      --background-button: var(--color-white);
 
       img,
       svg {
