@@ -1,0 +1,42 @@
+.info-block {
+   margin-bottom: 142px;
+
+   &__container {}
+
+   &__title {}
+
+   &__text {
+      margin-bottom: 54px;
+      max-width: 830px;
+   }
+
+   &__sub-title {
+      margin-bottom: 60px;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 79%;
+   }
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 100px;
+   }
+
+   &__cell {}
+
+   &__cell-image {
+      text-align: center;
+
+      img {
+         width: 150px;
+      }
+   }
+
+   &__cell-text {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 137%;
+      text-align: center;
+   }
+}

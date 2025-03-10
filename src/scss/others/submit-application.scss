@@ -1,0 +1,29 @@
+.submit-application {
+   margin-bottom: 118px;
+
+   &__container {}
+
+   &__title {}
+
+   &__text {
+      margin-bottom: 30px;
+      max-width: 513px;
+   }
+
+   &__form {
+      margin-bottom: 58px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+   }
+
+   &__form-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   &__form-button {
+      width: 100%;
+   }
+}
