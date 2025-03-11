@@ -7,45 +7,14 @@
                <img src="@img/svg/logo.svg" alt="Банкротное Бюро Про">
             </a>
 
-            <nav>
-               <ol class="header__nav">
-                  <li>
-                     <a href="#about">
-                        <img src="@img/svg/icon-about.svg" alt="иконка" aria-hidden="true">
-                        <span>О нас</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#benefit">
-                        <img src="@img/svg/icon-benefit.svg" alt="иконка" aria-hidden="true">
-                        <span>Преимущества</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#feedback">
-                        <img src="@img/svg/icon-feedback.svg" alt="иконка" aria-hidden="true">
-                        <span>Отзывы</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#price">
-                        <img src="@img/svg/icon-price.svg" alt="иконка" aria-hidden="true">
-                        <span>Цены</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#contact">
-                        <img src="@img/svg/icon-contact.svg" alt="иконка" aria-hidden="true">
-                        <span>Контакты</span>
-                     </a>
-                  </li>
-               </ol>
-            </nav>
-
-            <button class="button" type="button">
+            <button class="header__button button js-modal-open" type="button" data-modal_open="callback">
                <span>обратный вызов</span>
                <img src="@img/svg/icon-phone.svg" alt="иконка" aria-hidden="true">
             </button>
+
+            @@include('../html/Button-Menu/Button-Menu.html',{})
+
+            @@include('../html/Mobile-Menu/Mobile-Menu.html',{})
 
          </div>
       </div>

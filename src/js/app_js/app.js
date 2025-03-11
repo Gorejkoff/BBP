@@ -21,7 +21,7 @@ const MIN1024 = window.matchMedia('(min-width: 1024px)');
 const MIN768 = window.matchMedia('(min-width: 768px)');
 
 // variables
-const HEADER = document.getElementById('header');
+// const HEADER = document.getElementById('header');
 
 
 
@@ -51,11 +51,40 @@ function throttle(callee, timeout) {
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
    //  addHeightVariable();
+   closeHeaderMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-
+   if (event.target.closest('.open-menu')) { openHeaderMenu() }
 })
 
+function openHeaderMenu() {
+   document.body.classList.toggle('menu-is-open')
+}
+function closeHeaderMenu() {
+   document.body.classList.remove('menu-is-open')
+}
+
+
+// ** ======================= SCROLL ======================  ** //
+
+window.addEventListener('scroll', (event) => {
+   startAnimateFirstScreen(event)
+})
+
+const FIRST_SCREEN_ANIMATE = document.getElementById('first-screen-animate');
+function startAnimateFirstScreen(event) {
+   if (FIRST_SCREEN_ANIMATE && scrollY > 10) FIRST_SCREEN_ANIMATE.classList.add('show-background');
+   // FIRST_SCREEN_ANIMATE.classList.toggle('show-background', scrollY > 10);
+}
+
+// let callback = function (entries, observer) {
+//    /* код действий для элементов entries */
+//    if (entries[0].isIntersecting) {
+//       console.log(entries[0].target);
+//    }
+// };
+// let observer = new IntersectionObserver(callback, { threshold: 1.0 });
+// observer.observe(document.querySelector('#first-screen-animate'));

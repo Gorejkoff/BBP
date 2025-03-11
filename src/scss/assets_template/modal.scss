@@ -1,12 +1,14 @@
 .modal {
-   --height-modal: 100vh;
+   --height-modal: var(--vh, 100vh);
    position: fixed;
-   top: var(--header-h);
+   top: var(--header-h, 0);
    left: 0;
    z-index: 19;
    width: 100vw;
    height: var(--height-modal);
    background-color: var(--color-modal-bg);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
    scrollbar-gutter: stable;
    overflow-y: auto;
    overflow-x: hidden;
@@ -25,24 +27,90 @@
    }
 
    &__container {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 20px;
       min-height: var(--height-modal);
       display: flex;
       align-items: center;
-
-      @media (max-width:767.98px) {
-         padding: 0;
-      }
    }
 
 
    &__body {
       position: relative;
+      padding: 24px 34px 40px;
       margin: 0 auto;
       width: 100%;
+      max-width: 526px;
       background-color: var(--color-white);
+   }
 
+   &__header {
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 150%;
+
+      @media (min-width:780px) {
+         font-size: 26px;
+      }
+   }
+
+   &__title {
+      font-size: 32px;
+
+      @media (min-width:780px) {
+         font-size: 38px;
+      }
+   }
+
+   &__inputs {
+      margin-bottom: 33px;
+
+      @media (min-width:780px) {
+         margin-bottom: 48px;
+      }
+
+      &>*:not(:last-child) {
+         display: block;
+         margin-bottom: 20px;
+      }
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+   }
+
+   &__submit {
+      flex: 1 1 auto;
+      min-height: 62px;
+   }
+
+   &__text {
+      font-size: 12px;
+      line-height: 133%;
+      text-align: center;
+      font-weight: 500;
+
+      @media (min-width:780px) {
+         font-size: 16px;
+      }
+   }
+
+   &__send {
+      &>*:not(:last-child) {
+         margin-bottom: 39px;
+
+         @media (min-width:780px) {
+            margin-bottom: 50px;
+         }
+      }
+   }
+
+   &__send-button {
+      width: 100%;
    }
 }
 
