@@ -18,7 +18,7 @@ if (isPC) { document.body.classList.add('_pc') } else { document.body.classList.
 
 // media queries
 const MIN1024 = window.matchMedia('(min-width: 1024px)');
-const MIN768 = window.matchMedia('(min-width: 768px)');
+const MIN780 = window.matchMedia('(min-width: 780px)');
 
 // variables
 // const HEADER = document.getElementById('header');
@@ -68,26 +68,46 @@ function closeHeaderMenu() {
 }
 
 
-// ** ======================= SCROLL ======================  ** //
-
-window.addEventListener('scroll', (event) => {
-   startAnimateFirstScreen(event)
-})
-
-const FIRST_SCREEN_ANIMATE = document.getElementById('first-screen-animate');
-function startAnimateFirstScreen(event) {
-   if (FIRST_SCREEN_ANIMATE && scrollY > 10) FIRST_SCREEN_ANIMATE.classList.add('show-background');
-   // FIRST_SCREEN_ANIMATE.classList.toggle('show-background', scrollY > 10);
+if (MIN780.matches) {
+   const FIRST_SCREEN_ANIMATE = document.getElementById('first-screen-animate');
+   function startAnimateFirstScreen() {
+      if (FIRST_SCREEN_ANIMATE) FIRST_SCREEN_ANIMATE.classList.add('show-background');
+   }
+   setTimeout(startAnimateFirstScreen, 1000);
 }
 
-// let callback = function (entries, observer) {
-//    /* код действий для элементов entries */
-//    if (entries[0].isIntersecting) {
-//       console.log(entries[0].target);
-//    }
-// };
-// let observer = new IntersectionObserver(callback, { threshold: 1.0 });
-// observer.observe(document.querySelector('#first-screen-animate'));
+
+
+// let thresholdArray = [];
+// for (let i = 0; i < 1; i += 0.01) {
+//    thresholdArray.push(i);
+// }
+// console.log(thresholdArray);
+
+let callback = function (entries, observer) {
+   /* код действий для элементов entries */
+
+
+   entries.forEach(entry => {
+      console.log("test");
+
+   });
+
+   // if (entries[0].isIntersecting) {
+   //    console.log(entries[0].target);
+   // }
+};
+
+
+
+
+let observer = new IntersectionObserver(callback, { threshold: 0 });
+
+let target = document.querySelectorAll('.line-move');
+target.forEach(e => observer.observe(e));
+
+
+
 
 // перемещение блоков при адаптиве
 // data-da=".class,3,768" 

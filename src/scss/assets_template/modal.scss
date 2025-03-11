@@ -36,11 +36,15 @@
 
    &__body {
       position: relative;
-      padding: 24px 34px 40px;
+      padding: 20px;
       margin: 0 auto;
       width: 100%;
       max-width: 526px;
       background-color: var(--color-white);
+
+      @media (min-width:780px) {
+         padding: 24px 34px 40px;
+      }
    }
 
    &__header {
@@ -80,7 +84,11 @@
    &__buttons {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 20px;
+
+      @media (min-width:780px) {
+         gap: 50px;
+      }
    }
 
    &__submit {

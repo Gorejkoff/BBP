@@ -1,7 +1,9 @@
 .info-block {
    margin-bottom: 142px;
 
-   &__container {}
+   &__container {
+      position: relative;
+   }
 
    &__text {
       margin-bottom: 54px;
@@ -65,4 +67,16 @@
          font-size: 16px;
       }
    }
+
+   &__vertical-line {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      height: 225px;
+      width: 15px;
+      border-radius: 4px;
+      background-color: var(--color-yellow);
+
+   }
+
 }
