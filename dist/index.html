@@ -6,15 +6,12 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
-<link rel="stylesheet" href="css/style.css?_v=20250311170237">
+<link rel="stylesheet" href="css/style.css?_v=20250312225251">
 </head>
-
 
 <body>
 
-   <div class="wrapper">
-
-      <header id="header" class="header">
+   <header id="header" class="header">
    <div class="header__border">
       <div class="header__container">
          <div class="header__body">
@@ -110,9 +107,13 @@
    </div>
 </header>
 
-      <div class="main">
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <div class="wrapper">
 
-         <section class="first-screen">
+            <div class="main">
+
+               <section class="first-screen">
    <div class="first-screen__container">
       <div id="first-screen-animate" class="first-screen__shell">
          <div class="first-screen__body">
@@ -121,8 +122,8 @@
 
             <img class="first-screen__background" src="./img/jpg/image-1.jpg" alt="фон" aria-hidden="true">
          </div>
-         <div class="first-screen__line first-screen__line-1"></div>
-         <div class="first-screen__line first-screen__line-2"></div>
+         <div class="first-screen__line first-screen__line-1" data-speed="0.6"></div>
+         <div class="first-screen__line first-screen__line-2" data-speed="0.5"></div>
       </div>
 
 
@@ -139,7 +140,7 @@
    </div>
 </section>
 
-         <section class="submit-application">
+               <section class="submit-application">
    <div class="submit-application__container">
       <h2 class="title-section">Забыть о рутине</h2>
       
@@ -175,7 +176,7 @@
    </div>
 </section>
 
-         <section class="about background-section">
+               <section id="about" class="about background-section">
    <div class="about__container">
       <div class="about__title title-section">Кто мы?</div>
       <div class="about__text text-section">Мы знаем, как важно сосредоточиться на том, что умеешь лучше всего, поэтому помогаем в ведении дел целым штатом экспертов: арбитражные управляющие, банкротные юристы, эксперты, адвокаты, специалисты.</div>
@@ -242,7 +243,7 @@
    </div>
 </section>
 
-         <section class="info-block">
+               <section id="benefit" class="info-block">
    <div class="info-block__container">
       <h2 class="title-section">Для кого?</h2>
       <div class="info-block__text text-section">Банкротное Бюро pro – это сервис и для профессионалов, и для начинающих специалистов. Обладаем большим опытом создания и управления юридическими компаниями, которым мы готовы поделиться для расширения вашего любимого дела.</div>
@@ -268,12 +269,13 @@
          </div>
       </div>
 
-      <div class="info-block__vertical-line line-move"></div>
+      <div class="info-block__line-1" data-speed="0.7"></div>
+      <div class="info-block__line-2" data-speed="0.6"></div>
 
    </div>
 </section>
 
-         <section class="feedback">
+               <section id="feedback" class="feedback">
    <div class="feedback__container">
       <div class="feedback__title title-section">Отзывы</div>
       <div class="feedback__grid">
@@ -333,7 +335,7 @@
    </div>
 </section>
 
-         <section class="advantage background-section">
+               <section class="advantage background-section">
    <div class="advantage__container">
       <div class="advantage__title title-section">Преимущества</div>
       <ol class="advantage__list">
@@ -366,10 +368,14 @@
          <span>узнать больше</span>
          <img src="./img/svg/question.svg" alt="вопросительный знак">
       </button>
+
+      <div class="advantage__line-1" data-speed="0.8"></div>
+      <div class="advantage__line-2" data-speed="0.9"></div>
+
    </div>
 </section>
 
-         <section class="price">
+               <section id="price" class="price">
    <div class="price__container">
       <div class="price__title title-section">Цены</div>
 
@@ -421,12 +427,13 @@
          </div>
       </div>
 
-
+      <div class="price__line-1" data-speed="0.6"></div>
+      <div class="price__line-2" data-speed="0.7"></div>
 
    </div>
 </section>
 
-         <section class="submit-application">
+               <section class="submit-application">
    <div class="submit-application__container">
       <h2 class="title-section">Не стоит ждать</h2>
       
@@ -460,7 +467,7 @@
    </div>
 </section>
 
-         <section class="contacts">
+               <section id="contact" class="contacts">
    <div class="contacts__container">
       <h2 class="contacts__title title-section">Контакты</h2>
       <div class="contacts__body">
@@ -491,9 +498,9 @@
    </div>
 </section>
 
-      </div>
+            </div>
 
-      <footer id="footer" class="footer">
+            <footer id="footer" class="footer">
    <div class="footer__container">
       <div class="footer__body">
 
@@ -514,6 +521,8 @@
    </div>
 </footer>
 
+         </div>
+      </div>
    </div>
 
    <div id="callback" class="modal js-modal-hidden js-modal-close">
@@ -566,7 +575,11 @@
    </div>
 </div>
 
-   <script defer src='./js/app.js?_v=20250311170237'></script>
+   <script defer src='./js/gsap.min.js?_v=20250312225251'></script>
+<script defer src='./js/ScrollToPlugin.min.js?_v=20250312225251'></script>
+<script defer src='./js/ScrollTrigger.min.js?_v=20250312225251'></script>
+<script defer src='./js/ScrollSmoother.js?_v=20250312225251'></script>
+<script defer src='./js/app.js?_v=20250312225251'></script>
 
 
 

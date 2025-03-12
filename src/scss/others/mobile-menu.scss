@@ -1,7 +1,7 @@
 .mobile-menu {
    position: fixed;
    top: 0;
-   left: 100vw;
+   left: 110vw;
    height: var(--vh);
    width: 100%;
 
@@ -35,14 +35,17 @@
    }
 
    &__callback {
-      padding: 14px;
+      padding: 10px 14px;
       --background-button: var(--color-white);
+      min-height: 42px;
    }
 
    &__links {
       display: flex;
       gap: 14px;
       justify-content: flex-end;
+      align-items: flex-start;
+      font-size: 0;
 
       svg {
          width: 42px;

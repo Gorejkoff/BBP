@@ -5,37 +5,40 @@
    @@include('html/1_head.html',{"title":"Index"})
 </head>
 
-
 <body>
 
-   <div class="wrapper">
+   @@include('html/2_header.html',{})
 
-      @@include('html/2_header.html',{})
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <div class="wrapper">
 
-      <div class="main">
+            <div class="main">
 
-         @@include('html/First-Screen/First-Screen.html',{})
+               @@include('html/First-Screen/First-Screen.html',{})
 
-         @@include('html/Submit-Application/Submit-Application.html',{"title": "Забыть о рутине", "text": true})
+               @@include('html/Submit-Application/Submit-Application.html',{"title": "Забыть о рутине", "text": true})
 
-         @@include('html/About/About.html',{})
+               @@include('html/About/About.html',{})
 
-         @@include('html/Info-Block/Info-Block.html',{})
+               @@include('html/Info-Block/Info-Block.html',{})
 
-         @@include('html/Feedback/Feedback.html',{})
+               @@include('html/Feedback/Feedback.html',{})
 
-         @@include('html/Advantage/Advantage.html',{})
+               @@include('html/Advantage/Advantage.html',{})
 
-         @@include('html/Price/Price.html',{})
+               @@include('html/Price/Price.html',{})
 
-         @@include('html/Submit-Application/Submit-Application.html',{"title": "Не стоит ждать"})
+               @@include('html/Submit-Application/Submit-Application.html',{"title": "Не стоит ждать"})
 
-         @@include('html/Contacts/Contacts.html',{})
+               @@include('html/Contacts/Contacts.html',{})
 
+            </div>
+
+            @@include('html/4_footer.html',{})
+
+         </div>
       </div>
-
-      @@include('html/4_footer.html',{})
-
    </div>
 
    @@include('html/Modal/Modal-Callback.html',{})

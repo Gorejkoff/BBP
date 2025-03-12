@@ -2,7 +2,6 @@
 
 .first-screen {
    margin-bottom: 64px;
-   // overflow: hidden;
 
    @media (min-width:1120px) {
       margin-bottom: 74px;
@@ -27,6 +26,11 @@
       position: relative;
       overflow: hidden;
       min-height: calc((100vw - 48px) * 0.81);
+      border-radius: 4px;
+
+      @media (max-width:779.98px) {
+         width: calc(100% - 30px);
+      }
 
       @media (min-width:780px) {
          --offset-left: calc((var(--max-width-big-container) - var(--container-width)) / 2);
@@ -56,6 +60,7 @@
    }
 
    &__content {
+
       @include size_adaptive (max-width, 500, 650, 780, 1120);
 
       @media (min-width:780px) {
@@ -69,6 +74,7 @@
    }
 
    &__title {
+      width: calc(100% - 30px);
       margin-bottom: 15px;
       font-weight: 900;
       font-size: 23px;
@@ -77,6 +83,10 @@
 
       @include size_adaptive (font-size, 36, 50, 780, 1120);
 
+      @media (min-width:780px) {
+         width: 100%;
+      }
+
       @media (min-width:1120px) {
          font-size: 50px;
       }
@@ -84,11 +94,13 @@
 
    &__text {
       margin-bottom: 30px;
+      width: calc(100% - 30px);
       font-weight: 500;
       font-size: 12px;
       line-height: 137%;
 
       @media (min-width:780px) {
+         width: 100%;
          font-size: 14px;
       }
 
@@ -115,20 +127,33 @@
 
    &__line {
       position: absolute;
-
       border-radius: 4px;
-      width: 17px;
+      width: 13px;
       height: 100%;
       background-color: var(--color-black);
+
+      @media (min-width:780px) {
+         width: 17px;
+      }
    }
 
    &__line-1 {
-      top: 20px;
-      right: -41px;
+      top: -10%;
+      right: 0;
+
+      @media (min-width:780px) {
+         top: 0;
+         right: -41px;
+      }
    }
 
    &__line-2 {
-      top: 40px;
+      display: none;
+      top: 0;
       right: -74px;
+
+      @media (min-width:1120px) {
+         display: block;
+      }
    }
 }

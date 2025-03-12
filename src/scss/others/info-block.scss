@@ -1,5 +1,13 @@
 .info-block {
-   margin-bottom: 142px;
+   margin-bottom: 74px;
+
+   @media (min-width:780px) {
+      margin-bottom: 100px;
+   }
+
+   @media (min-width:1120px) {
+      margin-bottom: 142px;
+   }
 
    &__container {
       position: relative;
@@ -7,7 +15,7 @@
 
    &__text {
       margin-bottom: 54px;
-      max-width: 830px;
+      max-width: min(830px, 92%);
    }
 
    &__sub-title {
@@ -68,15 +76,54 @@
       }
    }
 
-   &__vertical-line {
+   &__line-1 {
       position: absolute;
-      top: 50px;
-      right: 50px;
-      height: 225px;
-      width: 15px;
+      top: 10%;
+      right: 30px;
+      height: 161px;
+      width: 7px;
+      border-radius: 4px;
+      background-color: var(--color-black);
+
+      @media (min-width:780px) {
+         top: 10%;
+         right: 50px;
+         height: 161px;
+         width: 10px;
+      }
+
+      @media (min-width:1120px) {
+         top: 0;
+         right: 50px;
+         height: 191px;
+         width: 15px;
+         background-color: var(--color-yellow);
+      }
+   }
+
+   &__line-2 {
+      position: absolute;
+      top: 10%;
+      right: 10px;
+      height: 95px;
+      width: 7px;
       border-radius: 4px;
       background-color: var(--color-yellow);
 
+      @media (min-width:780px) {
+         top: 10%;
+         right: 20px;
+         height: 95px;
+         width: 10px;
+      }
+
+      @media (min-width:1120px) {
+         top: 170px;
+         right: 20px;
+         height: 141px;
+         width: 13px;
+         background-color: var(--color-black);
+      }
    }
 
 }

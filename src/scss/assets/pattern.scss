@@ -20,12 +20,15 @@ body {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
-   // overflow: hidden;
+   // overflow: clip;
 }
 
 .main {
    flex: 1 1 auto;
-   overflow: hidden;
+
+   ._pc & {
+      padding-top: var(--height-header, 169px);
+   }
 }
 
 .underline {
@@ -90,7 +93,7 @@ body {
 .button {
    border-radius: 4px;
    padding: 10px 16px;
-   min-height: 42px;
+   min-height: 62px;
    background-color: var(--background-button, var(--color-yellow));
    text-transform: uppercase;
    font-weight: 700;
@@ -156,6 +159,24 @@ body {
 
 .textarea {
    flex: 1 1 auto;
+
+   @media (max-width:779.98px) {
+      height: 166px;
+   }
+}
+
+.modals-body {
+   pointer-events: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: var(--vh, 100vh);
+   overflow: hidden;
+
+   &>* {
+      pointer-events: all;
+   }
 }
 
 // .hidden-max1024 {

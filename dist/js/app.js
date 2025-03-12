@@ -21,9 +21,7 @@ const MIN1024 = window.matchMedia('(min-width: 1024px)');
 const MIN780 = window.matchMedia('(min-width: 780px)');
 
 // variables
-// const HEADER = document.getElementById('header');
-
-
+const HEADER = document.getElementById('header');
 
 function throttle(callee, timeout) {
    let timer = null;
@@ -37,20 +35,17 @@ function throttle(callee, timeout) {
    }
 }
 
-
-
 /* запись переменных высоты элементов */
-// function addHeightVariable() {
-//    if (typeof HEADER !== "undefined") {
-//       document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
-//    }
-// }
-// addHeightVariable();
-
+function addHeightVariable() {
+   if (typeof HEADER !== "undefined") {
+      document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
+   }
+}
+addHeightVariable();
 
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
-   //  addHeightVariable();
+   addHeightVariable();
    closeHeaderMenu();
 })
 
@@ -73,40 +68,26 @@ if (MIN780.matches) {
    function startAnimateFirstScreen() {
       if (FIRST_SCREEN_ANIMATE) FIRST_SCREEN_ANIMATE.classList.add('show-background');
    }
-   setTimeout(startAnimateFirstScreen, 1000);
+   setTimeout(startAnimateFirstScreen, 500);
 }
 
-
-
-// let thresholdArray = [];
-// for (let i = 0; i < 1; i += 0.01) {
-//    thresholdArray.push(i);
-// }
-// console.log(thresholdArray);
-
-let callback = function (entries, observer) {
-   /* код действий для элементов entries */
-
-
-   entries.forEach(entry => {
-      console.log("test");
-
+window.addEventListener('load', function (event) {
+   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+   let smoother = ScrollSmoother.create({
+      smooth: 1,
+      effects: true
    });
 
-   // if (entries[0].isIntersecting) {
-   //    console.log(entries[0].target);
-   // }
-};
+   document.body.addEventListener('click', (event) => {
+      if (event.target.closest('[href^="#"]')) {
+         event.preventDefault();
+         let getName = event.target.closest('[href^="#"]').getAttribute('href');
+         closeHeaderMenu();
+         gsap.to(window, { scrollTo: getName, ease: "power2" })
+      }
+   })
 
-
-
-
-let observer = new IntersectionObserver(callback, { threshold: 0 });
-
-let target = document.querySelectorAll('.line-move');
-target.forEach(e => observer.observe(e));
-
-
+})
 
 
 // перемещение блоков при адаптиве

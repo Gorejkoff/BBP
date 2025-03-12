@@ -1,7 +1,14 @@
 .price {
-   margin-bottom: 105px;
+   margin-bottom: 50px;
 
-   &__container {}
+   @media (min-width:780px) {
+      margin-bottom: 100px;
+   }
+
+
+   &__container {
+      position: relative;
+   }
 
    &__title {
       margin-bottom: 33px;
@@ -17,6 +24,8 @@
    }
 
    &__block {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -74,6 +83,11 @@
 
       @media (min-width:780px) {
          padding: 24px 31px;
+      }
+
+      &>* {
+         position: relative;
+         z-index: 1;
       }
 
       &:not(:last-child) {
@@ -148,6 +162,56 @@
       }
    }
 
+   &__line-1 {
+      position: absolute;
+      top: 0;
+      left: 88%;
+      z-index: 1;
+      height: 88px;
+      width: 7px;
+      border-radius: 4px;
+      background-color: var(--color-yellow);
 
+      @media (min-width:780px) {
+         top: 40%;
+         left: 95%;
+         height: 225px;
+         width: 10px;
+      }
+
+      @media (min-width:1120px) {
+         top: 40%;
+         left: 13%;
+         height: 225px;
+         width: 15px;
+      }
+
+   }
+
+   &__line-2 {
+      position: absolute;
+      top: 0;
+      left: 93%;
+      z-index: 1;
+      height: 132px;
+      width: 7px;
+      border-radius: 4px;
+      background-color: var(--color-black);
+
+      @media (min-width:780px) {
+         top: 50%;
+         left: 92%;
+         height: 185px;
+         width: 10px;
+      }
+
+
+      @media (min-width:1120px) {
+         top: 50%;
+         left: 17%;
+         height: 185px;
+         width: 15px;
+      }
+   }
 
 }

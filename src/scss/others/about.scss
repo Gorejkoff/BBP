@@ -3,7 +3,15 @@
 .about {
    padding-top: 38px;
    padding-bottom: 67px;
-   margin-bottom: 87px;
+   margin-bottom: 26px;
+
+   @media (min-width:780px) {
+      margin-bottom: 78px;
+   }
+
+   @media (min-width:1120px) {
+      margin-bottom: 87px;
+   }
 
    &__container {}
 

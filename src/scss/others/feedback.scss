@@ -1,7 +1,12 @@
 @use '../assets/mixin.scss' as *;
 
 .feedback {
-   margin-bottom: 97px;
+   margin-bottom: 40px;
+
+   @media (min-width:780px) {
+      margin-bottom: 97px;
+   }
+
 
    &__container {}
 
